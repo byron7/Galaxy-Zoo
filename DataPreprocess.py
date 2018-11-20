@@ -101,16 +101,10 @@ def createTrainingDataSet():
 
 
 def main():
-    image = cv2.imread(os.path.join(DIR_TRAIN_DATA_IMG, "100143.jpg"), cv2.IMREAD_GRAYSCALE)
-    image_process(image)
-
+ 
     createTrainingDataSet()
     createTestingDataSet()
-    pickle_in = open("./pickles/X_test.pickle", "rb")
-    X = pickle.load(pickle_in)
-    image = Image.fromarray(X[0].reshape(128, 128))
-    plt.imshow(image, cmap="gray")
-    plt.show()
+   
 
 if __name__ == '__main__':
     main()
